@@ -1,7 +1,6 @@
 package org.wcci.blog.models;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -33,7 +32,6 @@ public class Post {
             this.title = title;
             this.body = body;
             this.author = author;
-//            this.date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM dd yyyy hh:mm a"));
             this.category = category;
             this.tags = new ArrayList<>(Arrays.asList(tags));
     }

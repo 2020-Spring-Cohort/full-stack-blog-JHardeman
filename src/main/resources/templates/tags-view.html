@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+
+    <title>Blog</title>
+
+</head>
+
+<body class="container">
+<header class="container__header">
+    <div class="header__page-title">
+        <p class="site-header-title">Blog</p>
+    </div>
+
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/categories">Categories</a>
+        <a href="/authors">Authors</a>
+        <a href="/tags">Tags</a>
+
+    </div>
+    </nav>
+</header>
+</body>
+<div class="list">
+    <p th:each="tag:${tags}" class="tag">
+        <a th:href="@{'/tags/' + ${tag.id}}" th:text=" ''+${tag.tag} + ''"></a>
+    </p>
+</div>
+<div>
+    <form th:action="'/add-tag'" method="POST">
+        <input name="tag" type="text">
+        <button type="submit">Add Tag</button>
+    </form>
+</div>
+<body>
+
+</body>
+</html>
